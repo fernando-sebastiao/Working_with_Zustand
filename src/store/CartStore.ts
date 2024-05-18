@@ -1,5 +1,7 @@
 import { create } from "zustand";
 
+//Dados gerados por uma API fornecida pelo Chat GPT
+
 const initialItems = [
   {
     id: "p1",
@@ -41,6 +43,8 @@ export const useCartStore = create<CartStore>((set) => {
   };
 });
 
+//Another example about how to wark with that
+
 const coisasFeitas = [
   {
     id: "p4",
@@ -50,10 +54,18 @@ const coisasFeitas = [
   {
     id: "p54",
     name: "Cenoura",
-    preco: 123.12,
+    preco: 12.45,
+  },
+  {
+    id: "p3e",
+    name: "Pimenta",
+    preco: 459.12,
   },
 ];
 
+console.log(coisasFeitas);
+
+//Tipagens dos tipos de propriedades que serão recebidas
 type esquema = {
   id: string;
   name: string;
