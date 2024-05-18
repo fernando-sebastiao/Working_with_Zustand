@@ -40,3 +40,42 @@ export const useCartStore = create<CartStore>((set) => {
       set((state) => ({ cart: state.cart.filter((item) => item.id != id) })),
   };
 });
+
+const coisasFeitas = [
+  {
+    id: "p4",
+    name: "Batata",
+    preco: 12.12,
+  },
+  {
+    id: "p54",
+    name: "Cenoura",
+    preco: 123.12,
+  },
+];
+
+type esquema = {
+  id: string;
+  name: string;
+  preco: number;
+};
+
+type CoisasdoCarro = {
+  ItensPermitidos: esquema[];
+  carro: esquema[];
+  adicionar: (coisa: esquema) => void;
+  removerDoCarro: (id: string) => void;
+};
+
+export const seraUsada = create<CoisasdoCarro>((alterar) => {
+  return {
+    carro: [],
+    ItensPermitidos: coisasFeitas,
+    adicionar: (coisa) =>
+      alterar((continuar) => ({ carro: [...continuar.carro, coisa] })),
+    removerDoCarro: (id) =>
+      alterar((valor) => ({
+        carro: valor.carro.filter((dado) => dado.id != id),
+      })),
+  };
+});
