@@ -10,7 +10,7 @@ export const Cart = () => {
     <>
       <div className="flex flex-col mb-3">
         <ul className="flex flex-col space-y-3">
-          <h1 className="text-xl font-bold">Remove Item</h1>
+          <h1 className="text-xl font-bold">Remover Itens</h1>
           {items.map((item) => (
             <li key={item.id}>
               {item.name} - ${item.price}

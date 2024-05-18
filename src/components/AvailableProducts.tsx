@@ -9,7 +9,7 @@ export const AvailableProducts = () => {
   return (
     <>
       <div className="flex flex-col mb-3">
-        <h1 className="text-xl font-bold">Choose a Product</h1>
+        <h1 className="text-xl font-bold">Escolha o Produto</h1>
         <ul className="flex flex-col space-y-3">
           {items.map((item) => (
             <li key={item.id}>
